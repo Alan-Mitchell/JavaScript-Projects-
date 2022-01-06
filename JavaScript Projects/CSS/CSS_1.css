@@ -1,0 +1,14 @@
+
+input {
+    width:100%;
+}
+label{
+    font-size: larger;
+    font-weight: 700px;
+    color: blue;
+}
+button{
+    color: brown;
+    background-color: aquamarine;
+    width: 100%;
+}
