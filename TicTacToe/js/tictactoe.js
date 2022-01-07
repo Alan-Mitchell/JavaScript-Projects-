@@ -8,7 +8,7 @@ function placeXorO(squareNumber) {
     //This condition ensures a square hasn't been selected already.
     //The .some(method) is used to check each element of selectedSquares array
     //to see if it contains the square number clicked on.
-    if (!selectedSquares.some(elenemnt => element.includes(squareNumber))) {
+    if (!selectedSquares.some(element => element.includes(squareNumber))) {
         //The variable retrieves the html element id that was clicked.
         let select = document.getElementById(squareNumber);
         //This condition checks who turn it is.
@@ -30,7 +30,7 @@ function placeXorO(squareNumber) {
             activePlayer = "O";
             //If activePlayer is anything other than "X"
 
-        }
+        
     }else {
         //change the active player to "X"
         activePlayer = "X";
@@ -207,6 +207,7 @@ function placeXorO(squareNumber) {
     animationLineDrawing();
     //This line waits one second. Then, clears, resets game, and allow clicking again.
     setTimeout(function() { clear(); resetGame(); }, 1000);
+    }
     
 //This function resets the game in the event of a tie or win.
 function resetGame() {
@@ -214,7 +215,7 @@ function resetGame() {
     for(let i = 0; i< 9; i++) {
     //this variable gets the html element of i.
     let square = document.getElementById(String(1))
-    square.style.backgroundImage ''
+    square.style.backgroundImage = '';
 
 
 
