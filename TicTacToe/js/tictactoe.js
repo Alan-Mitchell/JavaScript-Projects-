@@ -208,4 +208,17 @@ function placeXorO(squareNumber) {
     //This line waits one second. Then, clears, resets game, and allow clicking again.
     setTimeout(function() { clear(); resetGame(); }, 1000);
     
+//This function resets the game in the event of a tie or win.
+function resetGame() {
+    //This for loop itterates through each HTML square element 
+    for(let i = 0; i< 9; i++) {
+    //this variable gets the html element of i.
+    let square = document.getElementById(String(1))
+    square.style.backgroundImage ''
+
+
+
+    }
+    //This resets our array so it is empty and we can start over.
+    selectedSquares = [];
 }
