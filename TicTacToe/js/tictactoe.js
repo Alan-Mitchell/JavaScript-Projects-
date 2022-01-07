@@ -68,7 +68,7 @@ function placeXorO(squareNumber) {
             };
         }
     }
-
+}
     //This function parses the slectedSquares array to search for win conditions.
     //drawWinLine function is called to draw line if condition is met.
     function checkWInConditions(){
@@ -136,13 +136,13 @@ function placeXorO(squareNumber) {
     //placement sound ('./media/place.mp3')
     function audio(audioURL) {
         //We create a new audio object and we pass the path as a parameter.
-        let audio = new audio(audioURL);
+        let Audio = new audio(audioURL);
         //Play method plays our audio sound.
         audio.play();
     }
 
     //This function utilizes html canvas to draw win lines.
-    function drawWInLine(coordX1, coordY1, coordX2, coordY2) {
+    function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
         //This line accesses our html canvas element.
         const canvas = document.getElementById('win-lines')
         //This line gives us access to methods and properties to use on canvas.
@@ -181,13 +181,18 @@ function placeXorO(squareNumber) {
             //This condition checks if we've reached the endpoint
             if (x1 <= x2 && y1 <= y2) {
              //This condition adds 10 to the previous end x point.
-             if (x < x2) (x += 10 ) 
-             if (x > y2) (y -= 10)
+             if (x < x2) {x += 10; }
+             if (x > y2) {y -= 10; }
              if (x >= x2 && y<= y2) (cancelAnimationFrame(animationLoop))  
             }
+           if (x1 <= x2 && y1 >= y2) {
+               if (x < x2) {x += 10; }
+               if (y > y2) {y -= 10; }
+               if (x >= x2 && y <- y2) {cancelAnimationFrame(animationLoop); }
+           } 
 
 
-        }
+        
 
     }
     //This function clears our canvas after our win line is drawn.
@@ -204,7 +209,7 @@ function placeXorO(squareNumber) {
     //This line plays the win sound 
     audio('./media/winGame.mp3');
     //This line calls our main animaton loop
-    animationLineDrawing();
+    animateLineDrawing();
     //This line waits one second. Then, clears, resets game, and allow clicking again.
     setTimeout(function() { clear(); resetGame(); }, 1000);
     }
