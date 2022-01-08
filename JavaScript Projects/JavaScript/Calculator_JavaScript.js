@@ -45,7 +45,7 @@ function Handle_Operator(Next_Operator) {
     //When an operator key is pressed, we convert the currnet number 
     //displayed on the screen to a number and then store the result in 
     //Calculator.First.Operand if it doesnt already exists
-    const Value_of_input = parseFloat(Display_Value);
+    const Value_of_Input = parseFloat(Display_Value);
     //checks if an operator already exists and if Wait_Se{cond_Operand is true,
     //then update the operator and exits from the function
     if (operator && Calculator.Wait_Second_Operand) {
@@ -53,14 +53,14 @@ function Handle_Operator(Next_Operator) {
         return;
     }
     if (First_Operand == null) {
-        Calculator.First_operand = Value_of_Input;
+        Calculator.First_Operand = Value_of_Input;
     }
     else if(operator) {//checks if an opertor already exists 
         const Value_Now = First_Operand || 0;
         //If operator exists, property lookup is performed for the opertor 
         //in the Perform_Calculations object and the function that matches the 
         //operator is executed
-        let result = Perform_Caluclations[operator] (Value_Now, Value_of_Input);
+        let result = Perform_Caluclation[operator] (Value_Now, Value_of_Input);
         //here add a fixed amount of numbers after the decimal 
         result = Number(result).toFixed(9)
         //this will remove any trailling 0's
