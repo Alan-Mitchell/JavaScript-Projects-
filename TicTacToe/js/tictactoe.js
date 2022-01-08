@@ -180,16 +180,17 @@ function placeXorO(squareNumber) {
             c.stroke();
             //This condition checks if we've reached the endpoint
             if (x1 <= x2 && y1 <= y2) {
-             //This condition adds 10 to the previous end x point.
-             if (x < x2) {x += 10; }
-             if (x > y2) {y -= 10; }
-             if (x >= x2 && y <= y2) (cancelAnimationFrame(animationLoop))  
+                if (x < x2) {x += 10; }
+                if (y < y2) {y += 10; }
+                //this conditiion cancels animation loop if we've reached end points
+                if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop);}
             }
-           if (x1 <= x2 && y1 >= y2) {
-               if (x < x2) {x += 10; }
-               if (y > y2) {y -= 10; }
-               if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
-           } 
+            if (x1 <= x2 && y>=y2) {
+                if (x < x2) {x += 10;}
+                if (y > y2) {y -= 10;}
+                //this condition cancels animation Loop if we've reached end points
+                if (x >= x2 && y <=y2) {cancelAnimationFrame(animationLoop);}
+            }
 
 
         

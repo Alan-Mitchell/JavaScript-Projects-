@@ -76,7 +76,7 @@ function Handle_Operator(Next_Operator) {
         '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
         '+':(First_Operand, Second_Operand) => First_Operand + Second_Operand,
         '-':(First_Operand, Second_Operand) => First_Operand - Second_Operand,
-        '=':(First_Operand, Second_Operand) => Second_Operand
+        '=' :( First_Operand, Second_Operand) => Second_Operand
         
 
     };
@@ -111,6 +111,13 @@ keys.addEventListener('click',(event) => {
     }
     if (target.classList.contains('decimal')) {
         Input_Decimal(target.value);
+        Update_Display();
+        return;
+
+    }
+    //ensures that AC clears the numbers from the calculator
+    if (target.classList.contains('all-clear')) {
+        Calculator_Reset();
         Update_Display();
         return;
     }
