@@ -60,7 +60,7 @@ function Handle_Operator(Next_Operator) {
         //If operator exists, property lookup is performed for the opertor 
         //in the Perform_Calculations object and the function that matches the 
         //operator is executed
-        let result = Perform_Caluclation[operator] (Value_Now, Value_of_Input);
+        let result = Perform_Calculation[operator] (Value_Now, Value_of_Input);
         //here add a fixed amount of numbers after the decimal 
         result = Number(result).toFixed(9)
         //this will remove any trailling 0's
