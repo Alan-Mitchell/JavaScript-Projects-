@@ -136,7 +136,7 @@ function placeXorO(squareNumber) {
     //placement sound ('./media/place.mp3')
     function audio(audioURL) {
         //We create a new audio object and we pass the path as a parameter.
-        let Audio = new audio(audioURL);
+        let audio = new Audio(audioURL);
         //Play method plays our audio sound.
         audio.play();
     }
@@ -183,12 +183,12 @@ function placeXorO(squareNumber) {
              //This condition adds 10 to the previous end x point.
              if (x < x2) {x += 10; }
              if (x > y2) {y -= 10; }
-             if (x >= x2 && y<= y2) (cancelAnimationFrame(animationLoop))  
+             if (x >= x2 && y <= y2) (cancelAnimationFrame(animationLoop))  
             }
            if (x1 <= x2 && y1 >= y2) {
                if (x < x2) {x += 10; }
                if (y > y2) {y -= 10; }
-               if (x >= x2 && y <- y2) {cancelAnimationFrame(animationLoop); }
+               if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
            } 
 
 
@@ -219,7 +219,7 @@ function resetGame() {
     //This for loop itterates through each HTML square element 
     for(let i = 0; i< 9; i++) {
     //this variable gets the html element of i.
-    let square = document.getElementById(String(1))
+    let square = document.getElementById(String(i));
     square.style.backgroundImage = '';
 
 
